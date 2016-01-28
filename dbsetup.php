@@ -1,45 +1,43 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <meta name="robots" content="noindex, nofollow">
-  <meta name="googlebot" content="noindex, nofollow">
- <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
- 
- 
- 
-<script type='text/javascript'>//<![CDATA[
-$(window).load(function(){
-$(document).ready(function(){
-
-    update_amounts();
-    $('.qty').change(function() {
-        update_amounts();
-    });
-});
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="googlebot" content="noindex, nofollow">
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 
 
-function update_amounts()
-{
-    var sum = 0.0;
-    $('#myTable > tbody  > tr').each(function() {
-        var qty = $(this).find('option:selected').val();
-        var price = $(this).find('.price').val();
-        var amount = (qty*price)
-        sum+=amount;
-        $(this).find('.amount').text(''+amount);
-    });
-    //just update the total to sum    
-}
-});//]]> 
+    <script type='text/javascript'>//<![CDATA[
+        $(window).load(function () {
+            $(document).ready(function () {
 
-</script>
- 
- 
+                update_amounts();
+                $('.qty').change(function () {
+                    update_amounts();
+                });
+            });
+
+
+            function update_amounts() {
+                var sum = 0.0;
+                $('#myTable > tbody  > tr').each(function () {
+                    var qty = $(this).find('option:selected').val();
+                    var price = $(this).find('.price').val();
+                    var amount = (qty * price)
+                    sum += amount;
+                    $(this).find('.amount').text('' + amount);
+                });
+                //just update the total to sum    
+            }
+        });//]]> 
+
+    </script>
+
+
 </head>
 <body>
 
-<?php 
+<?php
 
 $hostname = "artacre.db.10635241.hostedresource.com";
 $username = "artacre";
@@ -57,44 +55,42 @@ alert('Unable to connect to database! Please try again later.'))</script></html>
 
 /* return name of current default database */
 $strSQL = "Select * From Products";
-$result = mysqli_query($con, $strSQL);
-	while($row = mysqli_fetch_assoc($result))
-	{
-		echo "{$row['Name']} by {$row['Price']}";
-	}
-?>
+$result = mysqli_query($con, $strSQL); ?>
 
 
-  <table id="myTable">
+<table id="myTable">
     <thead>
-        <tr><th>Product name</th><th>Qty</th><th>Price</th>
-    <th align="center"><span id="amount" class="amount">Amount</span> </th></tr>
+    <tr>
+        <th>Product name</th>
+        <th>Qty</th>
+        <th>Price</th>
+        <th align="center"><span id="amount" class="amount">Amount</span></th>
+    </tr>
     </thead>
     <tfoot>
-        <tr><td colspan="2"></td><td align="right"><span id="total" class="total">TOTAL</span> </td></tr>
+    <tr>
+        <td colspan="2"></td>
+        <td align="right"><span id="total" class="total">TOTAL</span></td>
+    </tr>
     </tfoot>
     <tbody>
-    
-    <tr><td>Product 1</td><td><select value="" class="qty" name="qty">
-        <option value="1">1</option>
-        <option value="2">2</option>
-</select></td><td><input type="text" value="11.60" class="price"></td>
-<td align="center"><span id="amount" class="amount">0</span> eur</td></tr>
-    <tr><td>Product 2</td><td><select value="" class="qty" name="qty">
-<option value="1">1</option>
-<option value="2">2</option>
-</select></td><td><input type="text" value="15.26" class="price"></td>
-<td align="center"><span id="amount" class="amount">0</span> eur</td></tr>
-        
-</tbody></table>
+    <?php
+        while ($row = mysqli_fetch_assoc($result)) {
+    ?>
+    <tr>
+        <td><?=$row['Name']?></td>
+        <td><select value="" class="qty" name="qty">
+                <option value="1">1</option>
+                <option value="2">2</option>
+            </select></td>
+        <td><input type="text" value="<?=$row['Price']?>" class="price"></td>
+        <td align="center"><span id="amount" class="amount">0</span> eur</td>
+    </tr>
+    <?php
+        }
+    ?>
 
-<?php
-# Check If Record Exists
-#$query = "SELECT * FROM $usertable";
-#$result = mysqli_query($query);
-#if($result){  while($row = mysqli_fetch_array($result))  {    $name = $row["$yourfield"];    echo "Name: ".$name."<br>";  }}?>
-?>
-
-
+    </tbody>
+</table>
 
 </body>
