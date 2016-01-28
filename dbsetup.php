@@ -29,7 +29,7 @@
                     var qty = $(this).find('option:selected').val();
                     var price = $(this).find('.price').val();
                     var amount = (qty * price);
-                    sum += amount;
+                    sum = sum + amount;
                     $(this).find('.amount').text('' + amount);
                 });
 
