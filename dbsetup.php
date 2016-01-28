@@ -23,9 +23,8 @@
             //});
 
             function update_amounts() {
-                                debugger;
                 var sum = 0.0;
-                $('#products > tbody  > tr').each(function () {
+                $('#myTable1 > tbody  > tr').each(function () {
                     var qty = $(this).find('option:selected').val();
                     var price = $(this).find('.price').val();
                     var amount = (qty * price);
@@ -70,7 +69,7 @@ $strSQL = "Select * From Products";
 $result = mysqli_query($con, $strSQL); ?>
 
 
-<table id="myTable">
+<table id="myTable1">
     <thead>
         <tr><th>Product name</th><th>Qty</th><th>Price</th>
     <th align="center"><span id="amount" class="amount">Amount</span> </th></tr>
