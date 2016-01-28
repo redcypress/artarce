@@ -25,16 +25,11 @@
             function update_amounts() {
                 var sum = 0.0;
                 $('#myTable1 > tbody  > tr').each(function () {
-                    var qty = $(this).find('option:selected').val();
-                    var price = $(this).find('.price').val();
-                    var amount = (qty * price);
-                   
-                    sum += amount;
-                     if(isNaN(sum)) {
-var sum = 0;
-}
-                    alert(sum);
-                    $(this).find('.amount').text('' + amount);
+                     var qty = $(this).find('option:selected').val();
+        var price = $(this).find('.price').val();
+        var amount = (qty*price)
+        sum+=amount;
+        $(this).find('.amount').text(''+amount);
                 });
 
                 $('.total').text('' + sum);
@@ -235,7 +230,6 @@ $result = mysqli_query($con, $strSQL); ?>
 
                             <p>&nbsp;</p>
 
-                            <span id="total" class="total">TOTAL</span>
 
                             <p align="center">
                                 <input type="image" src="images/submit.png" width="149" height="56" value="Send Order">
