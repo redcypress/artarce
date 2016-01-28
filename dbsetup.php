@@ -34,7 +34,7 @@
                     $(this).find('.amount').text(''+amount);
                 });
                  $('#products > tbody  > tr').each(function () {
-                     var qty = $(this).find('option:selected').val();
+                    var qty = $(this).find('option:selected').val();
                     var price = $(this).find('.price').val();
                     var amount = (qty*price)
                     sum1+=amount;
@@ -185,7 +185,11 @@ $result = mysqli_query($con, $strSQL); ?>
                             <table id="products" width="95%" border="0" align="center" cellpadding="0" cellspacing="0">
                                 <tbody>
                                 <tr>
-                                    <td colspan="2" class="style26"><span class="style6"><strong><a name="vegetables"
+                                    <td colspan="2" class="style26">
+                                        
+                                                                    <p><span id="total" class="total1">TOTAL</span></p>
+
+                                        <span class="style6"><strong><a name="vegetables"
                                                                                                     id="vegetables"></a>LOCAL
                                                 ORGANIC VEGETABLES &amp; FRUIT: <br>
                                             </strong></span></td>
@@ -242,7 +246,6 @@ $result = mysqli_query($con, $strSQL); ?>
                                        value="Home Delivery for Hartland-Woodstock area">
                                 Special Delivery to Coldstream, Hartland, Woodstock areas </p>
 
-                            <p><span id="total" class="total1">TOTAL</span></p>
 
 
                             <p align="center">
