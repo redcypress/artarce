@@ -25,11 +25,10 @@
                     var qty = $(this).find('option:selected').val();
                     var price = $(this).find('.price').val();
                     var amount = (qty * price)
-                    var total = total + amount;
+                    var total = total + sum;
                     sum += amount;
                     $(this).find('.amount').text('' + amount);
                 });
-                debugger;
                  $('.total').text('' + total);
                 //just update the total to sum    
             }
@@ -92,7 +91,7 @@ $result = mysqli_query($con, $strSQL); ?>
                 <option value="6">6</option>
             </select></td>
         <td><input type="text" value="<?=$row['Price']?>" class="price"></td>
-        <td align="center"><span id="amount" class="amount">0</span> eur</td>
+        <td align="center"><span id="amount" class="amount">0</span></td>
     </tr>
     <?php
         }
