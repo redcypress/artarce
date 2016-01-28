@@ -19,6 +19,9 @@
                 $('.qty1').change(function () {
                     update_amounts();
                 });
+                $('.qty').change(function () {
+                    update_amounts();
+                });
             });
            // var $logo = $('#logo-scroll');
             //$(document).scroll(function () {
@@ -27,6 +30,7 @@
 
             function update_amounts() {
                                     var sum = 0.0;
+                                    var sum1 = 0.0;
 
                 $('#myTable1 > tbody  > tr').each(function () {
                      var qty = $(this).find('option:selected').val();
