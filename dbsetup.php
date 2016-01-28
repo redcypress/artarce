@@ -16,12 +16,12 @@ mysqli_connect($hostname, $username, $password) or die ("<html><script language=
 
 alert('Unable to connect to database! Please try again later.'))</script></html>");
 
-
+$query = "SELECT * from products";
 /* return name of current default database */
-if ($result = $mysqli->query("SELECT DATABASE()")) {
-    $row = $result->fetch_row();
-    printf("Default database is %s.\n", $row[0]);
-    $result->close();
+if ($result = $mysqli->query($query)) {
+     foreach ($mysqli->query($query) as $row) {
+        echo $row['Name'] . $row['price'] . '<br>';
+     }
 }
 
 # Check If Record Exists
