@@ -18,8 +18,8 @@
                 });
             });
             var $logo = $('#logo-scroll');
-            $(document).scroll(function() {
-                $logo.css({display: $(this).scrollTop() > 100? "block":"none"});
+            $(document).scroll(function () {
+                $logo.css({display: $(this).scrollTop() > 100 ? "block" : "none"});
             });
 
             function update_amounts() {
@@ -63,24 +63,6 @@ $strSQL = "Select * From Products";
 $result = mysqli_query($con, $strSQL); ?>
 
 
-<table id="myTable">
-    <thead>
-    <tr>
-        <th>Product name</th>
-        <th>Qty</th>
-        <th>Price</th>
-        <th align="center"><span id="amount" class="amount">Amount</span></th>
-    </tr>
-    </thead>
-    <tfoot>
-    
-    </tfoot>
-    <tbody>
-  
-    </tbody>
-</table>
-
-
 <table width="800" border="0" align="center" cellpadding="0" cellspacing="0" id="producttable">
     <tbody>
     <tr>
@@ -118,8 +100,8 @@ $result = mysqli_query($con, $strSQL); ?>
                     <td width="173" align="left" valign="top" class="date">
                         <table width="100%" border="0" cellspacing="0" cellpadding="0">
                             <tbody>
-                         
-                        
+
+
                             </tbody>
                         </table>
                     </td>
@@ -170,25 +152,25 @@ $result = mysqli_query($con, $strSQL); ?>
                                                 ORGANIC VEGETABLES &amp; FRUIT: <br>
                                             </strong></span></td>
                                 </tr>
-                                  <?php
-    while ($row = mysqli_fetch_assoc($result)) {
-        ?>
-        <tr>
-            <td><?= $row['Name'] ?></td>
-            <td><select value="" class="qty" name="qty">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                </select></td>
-            <td><input type="text" value="<?= $row['Price'] ?>" class="price"></td>
-            <td align="center"><span id="amount" class="amount">0</span></td>
-        </tr>
-        <?php
-    }
-    ?>
+                                <?php
+                                while ($row = mysqli_fetch_assoc($result)) {
+                                    ?>
+                                    <tr>
+                                        <td><?= $row['Name'] ?></td>
+                                        <td><select value="" class="qty" name="qty">
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                                <option value="6">6</option>
+                                            </select></td>
+                                        <td><input type="text" value="<?= $row['Price'] ?>" class="price"></td>
+                                        <td align="center"><span id="amount" class="amount">0</span></td>
+                                    </tr>
+                                    <?php
+                                }
+                                ?>
 
                                 </tbody>
                             </table>
@@ -221,8 +203,9 @@ $result = mysqli_query($con, $strSQL); ?>
                                 Special Delivery to Coldstream, Hartland, Woodstock areas </p>
 
                             <p>&nbsp;</p>
-                            
-                        <span id="total" class="total">TOTAL</span>
+
+                            <span id="total" class="total">TOTAL</span>
+
                             <p align="center">
                                 <input type="image" src="images/submit.png" width="149" height="56" value="Send Order">
                             </p>
@@ -256,24 +239,7 @@ $result = mysqli_query($con, $strSQL); ?>
             </table>
         </td>
     </tr>
-    <tr>
-        <td>
-            <img src="images/spacer.gif" width="171" height="1" alt=""></td>
-        <td>
-            <img src="images/spacer.gif" width="104" height="1" alt=""></td>
-        <td>
-            <img src="images/spacer.gif" width="38" height="1" alt=""></td>
-        <td>
-            <img src="images/spacer.gif" width="171" height="1" alt=""></td>
-        <td>
-            <img src="images/spacer.gif" width="48" height="1" alt=""></td>
-        <td>
-            <img src="images/spacer.gif" width="73" height="1" alt=""></td>
-        <td>
-            <img src="images/spacer.gif" width="92" height="1" alt=""></td>
-        <td>
-            <img src="images/spacer.gif" width="103" height="1" alt=""></td>
-    </tr>
+   
     </tbody>
 </table>
 
