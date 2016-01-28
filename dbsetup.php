@@ -17,10 +17,10 @@
                     update_amounts();
                 });
             });
-            var $logo = $('#logo-scroll');
-            $(document).scroll(function () {
-                $logo.css({display: $(this).scrollTop() > 100 ? "block" : "none"});
-            });
+           // var $logo = $('#logo-scroll');
+            //$(document).scroll(function () {
+              //  $logo.css({display: $(this).scrollTop() > 100 ? "block" : "none"});
+            //});
 
             function update_amounts() {
                                 debugger;
