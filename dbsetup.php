@@ -24,11 +24,11 @@
 
             function update_amounts() {
                                 debugger;
-                var sum = 0.0;
+                var sum = 0;
                 $('#products > tbody  > tr').each(function () {
                     var qty = $(this).find('option:selected').val();
                     var price = $(this).find('.price').val();
-                    var amount = (qty * price)
+                    var amount = (qty * price);
                     sum += amount;
                     $(this).find('.amount').text('' + amount);
                 });
