@@ -31,7 +31,9 @@
                     var amount = (qty * price);
                     sum = sum + amount;
                     $(this).find('.amount').text('' + amount);
+                    var t = sum;
                 });
+                var asdfad =t;
                 var total = sum;
 
                 $('.total').text('' + sum);
