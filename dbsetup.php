@@ -35,6 +35,9 @@
                 $('.total').text('' + sum);
                 //just update the total to sum
             }
+            
+                            $('.total1').text('asdfadf' + sum);
+
         });
 
     </script>
@@ -228,7 +231,7 @@ $result = mysqli_query($con, $strSQL); ?>
                                        value="Home Delivery for Hartland-Woodstock area">
                                 Special Delivery to Coldstream, Hartland, Woodstock areas </p>
 
-                            <p>&nbsp;</p>
+                            <p><span id="total" class="total1">TOTAL</span></p>
 
 
                             <p align="center">
