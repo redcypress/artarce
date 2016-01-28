@@ -73,10 +73,7 @@ $result = mysqli_query($con, $strSQL); ?>
     </tr>
     </thead>
     <tfoot>
-    <tr>
-        <td colspan="2"></td>
-        <td align="right"><span id="total" class="total">TOTAL</span></td>
-    </tr>
+    
     </tfoot>
     <tbody>
   
@@ -239,7 +236,8 @@ $result = mysqli_query($con, $strSQL); ?>
                                 Special Delivery to Coldstream, Hartland, Woodstock areas </p>
 
                             <p>&nbsp;</p>
-
+                            
+                        <span id="total" class="total">TOTAL</span>
                             <p align="center">
                                 <input type="image" src="images/submit.png" width="149" height="56" value="Send Order">
                             </p>
