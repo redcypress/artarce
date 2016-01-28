@@ -60,8 +60,9 @@ alert('Unable to connect to database! Please try again later.'))</script></html>
 
 /* return name of current default database */
 if ($result = $mysqli->query("SELECT * from products")) {
+     echo "asfd";
      foreach ($result as $row) {
-          echo $row['name'];
+          echo $row['Name'];
      }
   
     $result->close();
