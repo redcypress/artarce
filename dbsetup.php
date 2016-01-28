@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="style.css">
 
 
-    <script type='text/javascript'>//<![CDATA[
+    <script type='text/javascript'>
         $(window).load(function () {
             $(document).ready(function () {
 
@@ -17,7 +17,10 @@
                     update_amounts();
                 });
             });
-
+            var $logo = $('#logo-scroll');
+            $(document).scroll(function() {
+                $logo.css({display: $(this).scrollTop() > 100? "block":"none"});
+            });
 
             function update_amounts() {
                 var sum = 0.0;
@@ -31,7 +34,7 @@
                 $('.total').text('' + sum);
                 //just update the total to sum
             }
-        });//]]>
+        });
 
     </script>
 
@@ -76,26 +79,7 @@ $result = mysqli_query($con, $strSQL); ?>
     </tr>
     </tfoot>
     <tbody>
-    <?php
-    while ($row = mysqli_fetch_assoc($result)) {
-        ?>
-        <tr>
-            <td><?= $row['Name'] ?></td>
-            <td><select value="" class="qty" name="qty">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                </select></td>
-            <td><input type="text" value="<?= $row['Price'] ?>" class="price"></td>
-            <td align="center"><span id="amount" class="amount">0</span></td>
-        </tr>
-        <?php
-    }
-    ?>
-
+  
     </tbody>
 </table>
 
@@ -204,467 +188,29 @@ $result = mysqli_query($con, $strSQL); ?>
                                                 ORGANIC VEGETABLES &amp; FRUIT: <br>
                                             </strong></span></td>
                                 </tr>
-                                <tr>
-                                    <td class="table-border">Fresh Music Garlic</td>
-                                    <td class="table-border-right">$2/large head
-                                        <select name="HS_Garlic" id="HS_Garlic">
-                                            <option value="0">0</option>
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                            <option value="5">5</option>
-                                        </select></td>
-                                </tr>
-                                <tr>
-                                    <td class="table-border">Carrots</td>
-                                    <td class="table-border-right">$3.00/2lb
-                                        <select name="VN_Carrots_2lb" id="VN_Carrots_2lb">
-                                            <option value="0">0</option>
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                            <option value="5">5</option>
-                                        </select>
-                                        &nbsp;$5.00/4lb
-                                        <select name="VN_Carrots_4lb" id="VN_Carrots_4lb">
-                                            <option value="0">0</option>
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                            <option value="5">5</option>
-                                        </select></td>
-                                </tr>
-                                <tr>
-                                    <td class="table-border">Beets</td>
-                                    <td class="table-border-right">$3.00/2lb
-                                        <select name="VN_Beets_2lb" id="VN_Beets_2lb">
-                                            <option value="0">0</option>
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                            <option value="5">5</option>
-                                        </select></td>
-                                </tr>
-                                <tr>
-                                    <td class="table-border">Knowlesbee Orchards Organic Apples</td>
-                                    <td class="table-border-right">
-                                        <p>$4.00/2lb&nbsp;&nbsp;$6.50/5lb<br>
-                                            Nova Macs
-                                            <select name="Hutlo_Apples_NBers" id="Hutlo_Apples_NBers">
-                                                <option value="0">0</option>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                                <option value="3">3</option>
-                                                <option value="4">4</option>
-                                                <option value="5">5</option>
-                                            </select>
-                                        </p>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td colspan="2" class="style26"><strong><a name="juice" id="juice2"></a>ORGANIC
-                                            ARTISANAL BREAD<br>
-                                        </strong></td>
-                                </tr>
-                                <tr>
-                                    <td class="table-border">Sourdough Heritage Whole Wheat<br>
-                                        <span class="style14">(made with Organic Stoneground Red Fife  Whole Wheat, no sugar or sweetner added)</span><br>
-                                    </td>
-                                    <td class="table-border-right">$5/loaf
-                                        <select name="TWD_WWbread" id="TWD_WWbread">
-                                            <option value="0">0</option>
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                            <option value="5">5</option>
-                                        </select></td>
-                                </tr>
-                                <tr>
-                                    <td class="table-border"><p>Light Rye Bread<br>
-                                            <span class="style14">(made with Organic Stone Ground Flousr from Speerville, naturally sweetned  mollasses and lightly spiced with carroway seed)</span><br>
-                                        </p></td>
-                                    <td class="table-border-right">$5/loaf
-                                        <select name="TWD Light Rye Bread" id="TWD Light Rye Bread">
-                                            <option value="0">0</option>
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                            <option value="5">5</option>
-                                        </select></td>
-                                </tr>
-                                <tr>
-                                    <td class="table-border"><p>Sourdough Spelt Bread<br>
-                                            <span class="style14">(made with 100% Whole Spelt flour and lightly sweetened with honey)</span>
-                                        </p></td>
-                                    <td class="table-border-right">$6/loaf
-                                        <select name="TWD Sourdough Spelt Boule2" id="TWD Sourdough Spelt Boule3">
-                                            <option value="0">0</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                            <option value="5">5</option>
-                                        </select></td>
-                                </tr>
-                                <tr>
-                                    <td class="table-border"><span class="style4">New!</span> Whole Spelt Dough - great
-                                        for homemade pizza crusts, rolls, tortillas or bagels. Sold Frozen. <span
-                                            class="style9">Made with 100% Organic Spelt Flour</span></td>
-                                    <td class="table-border-right">$3.99/400g
-                                        <select name="TWD Spelt Dough 400g2" id="TWD Spelt Dough 400g3">
-                                            <option value="0" selected="">0</option>
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                            <option value="5">5</option>
-                                        </select>
-                                        Family size $5.99/700g
-                                        <select name="TWD Spelt Dough 700g2" id="TWD Spelt Dough 700g3">
-                                            <option value="0" selected="">0</option>
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                            <option value="5">5</option>
-                                        </select></td>
-                                </tr>
+                                  <?php
+    while ($row = mysqli_fetch_assoc($result)) {
+        ?>
+        <tr>
+            <td><?= $row['Name'] ?></td>
+            <td><select value="" class="qty" name="qty">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                </select></td>
+            <td><input type="text" value="<?= $row['Price'] ?>" class="price"></td>
+            <td align="center"><span id="amount" class="amount">0</span></td>
+        </tr>
+        <?php
+    }
+    ?>
+
                                 </tbody>
                             </table>
-                            <table width="95%" border="0" align="center" cellpadding="0" cellspacing="0">
-                                <tbody>
-                                <tr>
-                                    <td colspan="2" class="style26"><strong>LOCAL MEAT <br>
-                                        </strong></td>
-                                </tr>
-                                <tr>
-                                    <td class="table-border"><p>Whole Chicken fed with 100% Organic Feed from Speckled
-                                            Hen Farm in Knowlesville <span class="style9">(hormone and antibiotic free too)</span>
-                                        </p></td>
-                                    <td class="table-border-right">
-                                        <p>$4.25/lb (average size approx. 5lb)
-                                            <select name="Speckled Hen Chicken" id="Speckled Hen Chicken">
-                                                <option value="0">0</option>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                                <option value="3">3</option>
-                                                <option value="4">4</option>
-                                                <option value="5">5</option>
-                                            </select>
-                                        </p>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td colspan="2" class="style26"><p><strong>ORGANIC WHEAT FLOURS :</strong></p></td>
-                                </tr>
-                                <tr>
-                                    <td class="table-border">Unbleached Whole White Flour<br></td>
-                                    <td class="table-border-right"><label for="label65">$7.85/5lb</label>
-                                        <select name="Unbleached White 5lb2" id="label65">
-                                            <option value="0">0</option>
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                            <option value="5">5</option>
-                                        </select>
-                                        <label for="select2"></label>
-                                        <label for="label66">$34.50/11.3kg</label>
-                                        <select name="Unbleached White 11.34kg" id="Unbleached White 11.34kg">
-                                            <option value="0">0</option>
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                            <option value="5">5</option>
-                                        </select>
-                                        <br>
-                                        $70.60/25kg
-                                        <select name="Unbleached White 25kg2" id="Unbleached White 25kg">
-                                            <option value="0">0</option>
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                            <option value="5">5</option>
-                                        </select></td>
-                                </tr>
-                                <tr>
-                                    <td class="table-border">Whole Wheat Flour<br></td>
-                                    <td class="table-border-right"><label for="label63">$7.50/5lb</label>
-                                        <select name="Org_WWheat_Flour_2.27kg2" id="label63">
-                                            <option value="0">0</option>
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                            <option value="5">5</option>
-                                        </select>
-                                        <label for="select2"></label>
-                                        <label for="label64">$28.80/10kg</label>
-                                        <select name="Org_WWheat_Flour_10kg2" id="label63">
-                                            <option value="0">0</option>
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                            <option value="5">5</option>
-                                        </select>
-                                        &nbsp;<br>
-                                        $68.80/25kg
-                                        <select name="Org_WWheat_Flour_25kg2" id="Org_WWheat_Flour_25kg">
-                                            <option value="0">0</option>
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                            <option value="5">5</option>
-                                        </select></td>
-                                </tr>
-                                <tr>
-                                    <td class="table-border">Heritage Red Fife Bread Flour<br></td>
-                                    <td class="table-border-right"><label for="label61">$7.80/5lb</label>
-                                        <select name="RedFife Flour 5lb2" id="label61">
-                                            <option value="0">0</option>
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                            <option value="5">5</option>
-                                        </select>
-                                        <label for="select2"></label>
-                                        <label for="label62">$29.90/10kg</label>
-                                        <select name="RedFife Flour 10kg" id="label61">
-                                            <option value="0">0</option>
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                            <option value="5">5</option>
-                                        </select></td>
-                                </tr>
-                                <tr>
-                                    <td class="table-border">Whole Rye Flour <br></td>
-                                    <td class="table-border-right"><label for="label13">$6.90/5lb</label>
-                                        <select name="Rye Flour 5lb" id="label13">
-                                            <option value="0">0</option>
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                            <option value="5">5</option>
-                                        </select>
-                                        <label for="select2"></label>
-                                        <label for="label56">$25.80/10kg</label>
-                                        <select name="Rye Flour 10kg" id="label13">
-                                            <option value="0">0</option>
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                            <option value="5">5</option>
-                                        </select></td>
-                                </tr>
-                                <tr>
-                                    <td class="table-border">Whole Wheat Pastry Flour</td>
-                                    <td class="table-border-right">$7.85/5lb
-                                        <select name="PastryWheatFlour 5lb" id="PastryWheatFlour 5lb">
-                                            <option value="0">0</option>
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                            <option value="5">5</option>
-                                        </select>
-                                        &nbsp;$28.95/10kg
-                                        <select name="PastryWheatFlour 10kg" id="PastryWheatFlour 10kg">
-                                            <option value="0">0</option>
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                            <option value="5">5</option>
-                                        </select></td>
-                                </tr>
-                                <tr>
-                                    <td colspan="2" class="style26"><p><strong>ORGANIC LOW GLUTEN &amp; SPECIALTY FLOURS
-                                                :</strong></p></td>
-                                </tr>
-                                <tr>
-                                    <td class="table-border">Brown Rice Flour</td>
-                                    <td class="table-border-right">$11.95/5lb
-                                        <select name="BrownRiceFlour 5lb" id="BrownRiceFlour 5lb">
-                                            <option value="0">0</option>
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                            <option value="5">5</option>
-                                        </select></td>
-                                </tr>
-                                <tr>
-                                    <td class="table-border">Buckwheat Flour</td>
-                                    <td class="table-border-right">$4.50/2lb
-                                        <select name="Buckwheat Flour 910g2" id="Buckwheat Flour 910g2">
-                                            <option value="0">0</option>
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                            <option value="5">5</option>
-                                        </select></td>
-                                </tr>
-                                <tr>
-                                    <td class="table-border">Corn Flour</td>
-                                    <td class="table-border-right">$9.50/5lb
-                                        <select name="CornFlour 5lb" id="CornFlour 5lb">
-                                            <option value="0">0</option>
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                            <option value="5">5</option>
-                                        </select></td>
-                                </tr>
-                                <tr>
-                                    <td class="table-border">Kamut Flour</td>
-                                    <td class="table-border-right"><label for="label3">$8.90/5lb</label>
-                                        <select name="KamutFlour 5lb" id="label3">
-                                            <option value="0">0</option>
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                            <option value="5">5</option>
-                                        </select>
-                                        <label for="select2"></label>
-                                        <label for="label54">$33.20/10kg</label>
-                                        <select name="Kamut Flour 10kg" id="label3">
-                                            <option value="0">0</option>
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                            <option value="5">5</option>
-                                        </select></td>
-                                </tr>
-                                <tr>
-                                    <td class="table-border">Whole Spelt Flour<br></td>
-                                    <td class="table-border-right"><label for="label7">$9.80/5lb</label>
-                                        <select name="Spelt Flour 5lb2" id="label7">
-                                            <option value="0">0</option>
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                            <option value="5">5</option>
-                                        </select>
-                                        <label for="select2"></label>
-                                        <label for="label60">$31.90/10kg</label>
-                                        <select name="Whole Spelt Flour 10kg" id="label7">
-                                            <option value="0">0</option>
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                            <option value="5">5</option>
-                                        </select></td>
-                                </tr>
-                                </tbody>
-                            </table>
-                            
-                            <table width="95%" border="0" align="center" cellpadding="0" cellspacing="0">
-                                <tbody>
-                                <tr>
-                                    <td colspan="2" valign="top" class="style26"><strong><a name="sweet"></a>ORGANIC NUT
-                                            BUTTERS &amp; CONDIMENTS</strong></td>
-                                </tr>
-                                <tr>
-                                    <td valign="top" class="table-border"><p><em>Naturally Nutty Nut Butters:<br>
-                                            </em>Peanut Butter <br>
-                                        </p></td>
-                                    <td class="table-border-right">
-                                        <p>Smooth $6.60/500g
-                                            <select name="Peanut Butter 500g Smooth2" id="Peanut Butter 500g Smooth2">
-                                                <option value="0">0</option>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                                <option value="3">3</option>
-                                                <option value="4">4</option>
-                                                <option value="5">5</option>
-                                            </select>
-                                            Smooth $42.50/4kg
-                                            <select name="Peanut Butter 4kg Smooth2" id="Peanut Butter 4kg Smooth2">
-                                                <option value="0">0</option>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                                <option value="3">3</option>
-                                                <option value="4">4</option>
-                                                <option value="5">5</option>
-                                            </select>
-                                            <br>
-                                            Crunchy $6.60/500g
-                                            <select name="Peanut Butter 500g Crunchy2" id="Peanut Butter 500g Crunchy2">
-                                                <option value="0">0</option>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                                <option value="3">3</option>
-                                                <option value="4">4</option>
-                                                <option value="5">5</option>
-                                            </select>
-                                            Crunchy $42.50/4kg
-                                            <select name="Peanut Butter 4kg Crunchy" id="Peanut Butter 4kg Crunchy">
-                                                <option value="0">0</option>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                                <option value="3">3</option>
-                                                <option value="4">4</option>
-                                                <option value="5">5</option>
-                                            </select>
-                                            <br>
-                                        </p>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td valign="top" class="table-border">Almond Butter <br></td>
-                                    <td class="table-border-right">$9.60/240g
-                                        <select name="Almond Butter2" id="Almond Butter2">
-                                            <option value="0">0</option>
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                            <option value="5">5</option>
-                                        </select></td>
-                                </tr>
-                                <tr>
-                                    <td valign="top" class="table-border">Sesame Tahini</td>
-                                    <td class="table-border-right">$4.50/240g
-                                        <select name="Tahini 240g2" id="Tahini 240g2">
-                                            <option value="0">0</option>
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                            <option value="5">5</option>
-                                        </select>
-                                        &nbsp;$8.90/500g
-                                        <select name="Tahini 500g2" id="Tahini 500g2">
-                                            <option value="0">0</option>
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                            <option value="5">5</option>
-                                        </select></td>
-                                </tr>
-                                </tbody>
-                            </table>
+
                             <p>&nbsp;</p>
                             <blockquote>
                                 <p class="style27">Comments</p>
