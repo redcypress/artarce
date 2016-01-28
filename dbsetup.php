@@ -13,7 +13,7 @@
             $(document).ready(function () {
 
                 update_amounts();
-                $('.qty').change(function () {
+                $('.qty1').change(function () {
                     update_amounts();
                 });
             });
@@ -74,12 +74,12 @@ $result = mysqli_query($con, $strSQL); ?>
     </tfoot>
     <tbody>
     
-    <tr><td>Product 1</td><td><select value="" class="qty" name="qty">
+    <tr><td>Product 1</td><td><select value="" class="qty" name="qty1">
         <option value="1">1</option>
         <option value="2">2</option>
 </select></td><td><input type="text" value="11.60" class="price"></td>
 <td align="center"><span id="amount" class="amount">0</span> eur</td></tr>
-    <tr><td>Product 2</td><td><select value="" class="qty" name="qty">
+    <tr><td>Product 2</td><td><select value="" class="qty" name="qty1">
 <option value="1">1</option>
 <option value="2">2</option>
 </select></td><td><input type="text" value="15.26" class="price"></td>
