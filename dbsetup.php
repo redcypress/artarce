@@ -47,7 +47,7 @@
                 //just update the total to sum
             }
             
-            $('.total1').text(sum);
+            $('.total1').text(sum1);
 
         });
 
