@@ -51,22 +51,17 @@ $yourfield = "name";
 
 $mysqli = new mysqli($hostname, $username, $password, $dbname);
 
-
-mysqli_connect($hostname, $username, $password) or die ("<html><script language='JavaScript'>
-
-
+$con = mysqli_connect($hostname, $username, $password) or die ("<html><script language='JavaScript'>
 alert('Unable to connect to database! Please try again later.'))</script></html>");
 
 
 /* return name of current default database */
-if ($result = $mysqli->query("SELECT * from products")) {
-     echo "asfd";
-     foreach ($result as $row) {
+$strSQL = "Select * From Product"
+$query = mysqli_query($con, $strSQL);
+while($result = mysqli_fetch_array($query))
           echo $row['Name'];
      }
-  
-    $result->close();
-}
+
 ?>
 
 
