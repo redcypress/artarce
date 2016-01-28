@@ -29,7 +29,7 @@
                     sum += amount;
                     $(this).find('.amount').text('' + amount);
                 });
-                 $(this).find('.total').text('' + total);
+                 $('.total').text('' + total);
                 //just update the total to sum    
             }
         });//]]> 
