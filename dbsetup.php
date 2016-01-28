@@ -11,7 +11,6 @@
     <script type='text/javascript'>
         $(window).load(function () {
             $(document).ready(function () {
-
                 update_amounts();
                 $('.qty1').change(function () {
                     update_amounts();
@@ -26,17 +25,17 @@
                 var sum = 0.0;
                 $('#myTable1 > tbody  > tr').each(function () {
                      var qty = $(this).find('option:selected').val();
-        var price = $(this).find('.price').val();
-        var amount = (qty*price)
-        sum+=amount;
-        $(this).find('.amount').text(''+amount);
+                    var price = $(this).find('.price').val();
+                    var amount = (qty*price)
+                    sum+=amount;
+                    $(this).find('.amount').text(''+amount);
                 });
 
                 $('.total').text('' + sum);
                 //just update the total to sum
             }
             
-                            $('.total1').text('asdfadf' + sum);
+            $('.total1').text('asdfadf');
 
         });
 
