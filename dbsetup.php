@@ -60,7 +60,7 @@ $strSQL = "Select * From Products";
 $result = mysqli_query($con, $strSQL);
 	while($row = mysqli_fetch_assoc($result))
 	{
-		echo "{$row['name']} by {$row['price']}";
+		echo "{$row['Name']} by {$row['Price']}";
 	}
 ?>
 
