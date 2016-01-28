@@ -17,7 +17,6 @@
             $(document).ready(function () {
                 update_amounts();
                 $('.qty1').change(function () {
-                    var sum = 0.0;
                     update_amounts();
                 });
             });
@@ -27,6 +26,8 @@
             //});
 
             function update_amounts() {
+                                    var sum = 0.0;
+
                 $('#myTable1 > tbody  > tr').each(function () {
                      var qty = $(this).find('option:selected').val();
                     var price = $(this).find('.price1').val();
