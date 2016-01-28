@@ -24,7 +24,7 @@
 
             function update_amounts() {
                 var sum = 0.0;
-                $('#producttable > tbody  > tr').each(function () {
+                $('#products > tbody  > tr').each(function () {
                     var qty = $(this).find('option:selected').val();
                     var price = $(this).find('.price').val();
                     var amount = (qty * price)
@@ -118,23 +118,8 @@ $result = mysqli_query($con, $strSQL); ?>
                     <td width="173" align="left" valign="top" class="date">
                         <table width="100%" border="0" cellspacing="0" cellpadding="0">
                             <tbody>
-                            <tr>
-                                <td>
-                                    <center>
-                      <span class="style4"><span class="style2">Friday</span><br>
-                      <span class="style31">October</span></span>
-                                    </center>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <center>
-                                        <span class="style4"><span class="style3">23</span></span>
-                                    </center>
-
-
-                                </td>
-                            </tr>
+                         
+                        
                             </tbody>
                         </table>
                     </td>
@@ -177,7 +162,7 @@ $result = mysqli_query($con, $strSQL); ?>
                                 </tr>
                                 </tbody>
                             </table>
-                            <table width="95%" border="0" align="center" cellpadding="0" cellspacing="0">
+                            <table id="products" width="95%" border="0" align="center" cellpadding="0" cellspacing="0">
                                 <tbody>
                                 <tr>
                                     <td colspan="2" class="style26"><span class="style6"><strong><a name="vegetables"
