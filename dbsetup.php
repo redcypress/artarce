@@ -29,7 +29,11 @@
                     var qty = $(this).find('option:selected').val();
                     var price = $(this).find('.price').val();
                     var amount = (qty * price);
+                   
                     sum += amount;
+                     if(isNaN(sum)) {
+var sum = 0;
+}
                     alert(sum);
                     $(this).find('.amount').text('' + amount);
                 });
