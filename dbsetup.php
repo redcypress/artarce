@@ -24,7 +24,7 @@
 
             function update_amounts() {
                 var sum = 0.0;
-                $('#myTable > tbody  > tr').each(function () {
+                $('#producttable > tbody  > tr').each(function () {
                     var qty = $(this).find('option:selected').val();
                     var price = $(this).find('.price').val();
                     var amount = (qty * price)
@@ -81,7 +81,7 @@ $result = mysqli_query($con, $strSQL); ?>
 </table>
 
 
-<table width="800" border="0" align="center" cellpadding="0" cellspacing="0" id="Table_01">
+<table width="800" border="0" align="center" cellpadding="0" cellspacing="0" id="producttable">
     <tbody>
     <tr>
         <td height="117" colspan="8">
