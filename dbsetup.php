@@ -31,6 +31,7 @@
                     sum += amount;
                     $(this).find('.amount').text('' + amount);
                 });
+                debugger;
                 $('.total').text('' + sum);
                 //just update the total to sum
             }
