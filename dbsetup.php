@@ -10,6 +10,8 @@
 
     <script type='text/javascript'>
         var sum = 0.0;
+                var sum1 = 0.0;
+
 
         $(window).load(function () {
             $(document).ready(function () {
@@ -31,6 +33,15 @@
                     sum+=amount;
                     $(this).find('.amount').text(''+amount);
                 });
+                 $('#products > tbody  > tr').each(function () {
+                     var qty = $(this).find('option:selected').val();
+                    var price = $(this).find('.price').val();
+                    var amount = (qty*price)
+                    sum1+=amount;
+                    $(this).find('.amount').text(''+amount);
+                });
+                
+                
 
                 $('.total').text('' + sum);
                 //just update the total to sum
