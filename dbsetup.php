@@ -9,6 +9,8 @@
 
 
     <script type='text/javascript'>
+        var sum = 0.0;
+
         $(window).load(function () {
             $(document).ready(function () {
                 update_amounts();
@@ -22,7 +24,6 @@
             //});
 
             function update_amounts() {
-                var sum = 0.0;
                 $('#myTable1 > tbody  > tr').each(function () {
                      var qty = $(this).find('option:selected').val();
                     var price = $(this).find('.price').val();
