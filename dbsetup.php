@@ -24,17 +24,15 @@
 
             function update_amounts() {
                                 debugger;
-                var sum = 0;
+                var sum = 0.0;
                 $('#products > tbody  > tr').each(function () {
                     var qty = $(this).find('option:selected').val();
                     var price = $(this).find('.price').val();
                     var amount = (qty * price);
-                    sum = sum + amount;
+                    sum += amount;
+                    alert(sum);
                     $(this).find('.amount').text('' + amount);
-                    var t = t + amount;
                 });
-                var asdfad =t;
-                var total = sum;
 
                 $('.total').text('' + sum);
                 //just update the total to sum
