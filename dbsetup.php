@@ -58,7 +58,7 @@ alert('Unable to connect to database! Please try again later.'))</script></html>
 /* return name of current default database */
 $strSQL = "Select * From Product";
 $query = mysqli_query($con, $strSQL);
-while($result = mysqli_fetch_array($query))
+while($result = mysqli_fetch_array($query)) {
           echo $row['Name'];
      }
 
