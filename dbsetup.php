@@ -23,6 +23,7 @@
             });
 
             function update_amounts() {
+                                debugger;
                 var sum = 0.0;
                 $('#products > tbody  > tr').each(function () {
                     var qty = $(this).find('option:selected').val();
@@ -31,7 +32,7 @@
                     sum += amount;
                     $(this).find('.amount').text('' + amount);
                 });
-                debugger;
+
                 $('.total').text('' + sum);
                 //just update the total to sum
             }
@@ -155,9 +156,10 @@ $result = mysqli_query($con, $strSQL); ?>
                                 </tr>
                                 <?php
                                 while ($row = mysqli_fetch_assoc($result)) {
+                                    if ($row['Name']!=""):
                                     ?>
                                     <tr>
-                                        <td><?= $row['Name'] ?></td>
+                                        <td><?=$row['Name']?></td>
                                         <td><select value="" class="qty" name="qty">
                                                 <option value="1">1</option>
                                                 <option value="2">2</option>
@@ -170,6 +172,7 @@ $result = mysqli_query($con, $strSQL); ?>
                                         <td align="center"><span id="amount" class="amount">0</span></td>
                                     </tr>
                                     <?php
+                                    endif;
                                 }
                                 ?>
 
