@@ -21,6 +21,8 @@
                 });
                 $('.qty').change(function () {
                     update_amounts();
+                    $('.total1').text(sum1);
+
                 });
             });
            // var $logo = $('#logo-scroll');
@@ -53,7 +55,6 @@
                 //just update the total to sum
             }
             
-            $('.total1').text(sum1);
 
         });
 
@@ -193,7 +194,7 @@ $result = mysqli_query($con, $strSQL); ?>
                                 <tr>
                                     <td colspan="2" class="style26">
                                         
-                                                                    <p><span id="total" class="total1">TOTAL</span></p>
+                                        <p><span id="total" class="total1">TOTAL</span></p>
 
                                         <span class="style6"><strong><a name="vegetables"
                                                                                                     id="vegetables"></a>LOCAL
