@@ -10,13 +10,14 @@
 
     <script type='text/javascript'>
         var sum = 0.0;
-                var sum1 = 0.0;
+        var sum1 = 0.0;
 
 
         $(window).load(function () {
             $(document).ready(function () {
                 update_amounts();
                 $('.qty1').change(function () {
+                    var sum = 0.0;
                     update_amounts();
                 });
             });
