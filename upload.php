@@ -57,7 +57,7 @@ if ($uploadOk == 0) {
             PRIMARY KEY (  `Id` )
             ) ENGINE = MYISAM DEFAULT CHARSET = latin1;
         ); ";
-        $mysqli->query($con, $createrawtable);
+        $mysqli->query($createrawtable);
     
         $downloadedcsvfile = fopen($target_file,"r");
             if ($downloadedcsvfile){
