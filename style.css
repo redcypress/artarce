@@ -81,3 +81,14 @@ a:link {
     height: 40px;
     top: 50%;
 }
+
+.total1.bottom {
+    position: relative;
+    display: block;
+    background: yellow;
+    
+    left:inherit;
+    width: inherit;
+    height: inherit;
+    top: inherit;
+}
