@@ -170,7 +170,7 @@ $result = mysqli_query($con, $strSQL);
                                 $rowcount =  mysqli_num_rows($result) -1;
                                 $new = $row['Category'];
                                 if(!$row[0] ) {
-                                     if (($new != $old) || $row[$rowcount]):?>
+                                     if (($new != $old) && $row[$rowcount]):?>
                                     </tbody>
                                     </table>
                                     <?php
