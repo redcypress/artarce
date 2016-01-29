@@ -25,7 +25,7 @@
             });
             var total = $('#total');
             $(document).scroll(function () {
-                var scroll = $(window).scrollTop();
+                var scroll = $('#commments').scrollTop();
                 if (scroll >= 50) {
                     $(total).addClass("bottom");
                 } else {
@@ -225,7 +225,7 @@ $result = mysqli_query($con, $strSQL);
                             ?>
                             <p>&nbsp;</p>
                             <blockquote>
-                                <p class="style27">Comments</p>
+                                <p class="style27" id="commments">Comments</p>
 
                                 <p>Do you want something from Speerville Mill that is not listed? Please write it in the
                                     comments section and we will add it to your order. Download a full <a
