@@ -194,7 +194,6 @@ $result = mysqli_query($con, $strSQL); ?>
                                 <tr>
                                     <td colspan="2" class="style26">
                                         
-                                        <p><span id="total" class="total1">TOTAL</span></p>
 
                                         <span class="style6"><strong><a name="vegetables"
                                                                                                     id="vegetables"></a>LOCAL
@@ -222,6 +221,7 @@ $result = mysqli_query($con, $strSQL); ?>
                                     endif;
                                 }
                                 ?>
+                                        <p><span id="total" class="total1">TOTAL</span></p>
 
                                 </tbody>
                             </table>
