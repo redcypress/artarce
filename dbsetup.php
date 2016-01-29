@@ -24,9 +24,10 @@
                 });
             });
             var total = $('#total');
+            var commments = $('#commments').offset();
             $(document).scroll(function () {
-                var scroll = $('#commments').top();
-                if (scroll >= 50) {
+                var scroll = $(window).scrollTop();
+                if (scroll >= commments) {
                     $(total).addClass("bottom");
                 } else {
                     $(total).removeClass("bottom");
