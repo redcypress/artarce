@@ -191,7 +191,7 @@ $result = mysqli_query($con, $strSQL);
                                 if ($row['Name'] != ""): ?>
                                     <tr>
                                         <td>
-                                            <?=$row['Name'] ?> <span  value="2.0" class="price"><?=$row['Name'] ?></span>
+                                            <?=$row['Name'] ?> <span  value="2.0" class="price"><?=$row['Price'] ?></span>
                                         </td>
                                         <td>
                                             <select value="" class="qty" name="qty">
