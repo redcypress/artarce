@@ -97,7 +97,6 @@ $result = mysqli_query($con, $strSQL);
     </tr>
     <tr bgcolor="#FFFFFF">
         <td height="237" colspan="8">
-            <p>&nbsp;</p>
             <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
                 <tbody>
                 <tr>
