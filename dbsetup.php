@@ -33,7 +33,7 @@
             var sum1 = 0.0;
 
 
-            $('#products > tbody  > tr').each(function() {
+            $('#products  tbody  tr').each(function() {
                 var qty = $(this).find('option:selected').val();
                 var price = $(this).find('.price').val();
                 var amount = (qty * price)
@@ -152,7 +152,13 @@ $result = mysqli_query($con, $strSQL); ?>
                                                 </tbody>
                                             </table>
                                             <table id="products" width="95%" border="0" align="center" cellpadding="0" cellspacing="0">
-                                              
+                                                <tr>
+                                                    <td colspan="2" class="style26">
+                                                        <span class="style6"><strong><a name="vegetables"
+                                            id="vegetables"></a>LOCAL
+                                                ORGANIC VEGETABLES &amp; FRUIT: <br>
+                                            </strong></span></td>
+                                                </tr>
                                                 <tbody>
                                                     <?php
                                                     while ($row = mysqli_fetch_assoc($result)) {
