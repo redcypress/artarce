@@ -77,7 +77,8 @@ alert('Unable to connect to database! Please try again later.'))</script></html>
 /* return name of current default database */
 $strSQL = "Select SQL_CALC_FOUND_ROWS * From products";
 $result = mysqli_query($con, $strSQL);
-$rowcount = mysqli_query($con,"SELECT FOUND_ROWS();") - 1;?>
+$rowcount = mysqli_query($con,"SELECT FOUND_ROWS();") - 1;
+echo $rowcount;?>
 
 <table width="800" border="0" align="center" cellpadding="0" cellspacing="0" id="producttable">
     <tbody>
