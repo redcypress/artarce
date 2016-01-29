@@ -40,7 +40,7 @@
 
                 $('#products  tbody > tr').each(function () {
                     var qty = $(this).find('option:selected').val();
-                    var price = $(this).find('.price').val();
+                    var price = $(this).find('.price').innerHTML();
                     var amount = (qty * price)
                     sum += amount;
                     $(this).find('.amount').text('' + amount);
@@ -191,7 +191,7 @@ $result = mysqli_query($con, $strSQL);
                                 if ($row['Name'] != ""): ?>
                                     <tr>
                                         <td>
-                                            <?=$row['Name'] ?>
+                                            <?=$row['Name'] ?> <span  value="2.0" class="price"><?=$row['Name'] ?></span>
                                         </td>
                                         <td>
                                             <select value="" class="qty" name="qty">
@@ -202,9 +202,6 @@ $result = mysqli_query($con, $strSQL);
                                                 <option value="5">5</option>
                                                 <option value="6">6</option>
                                             </select>
-                                        </td>
-                                        <td>
-                                            <input type="text" value="2.0" class="price">
                                         </td>
                                         <td align="center"><span id="amount" class="amount">0</span></td>
                                     </tr>
