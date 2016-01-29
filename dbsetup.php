@@ -153,19 +153,21 @@ $result = mysqli_query($con, $strSQL); ?>
                                                     </tr>
                                                 </tbody>
                                             </table>
+                                            <?php while ($row = mysqli_fetch_assoc($result)) {
+                                                $new=$row['Category'];
+                                                if ($new != $old):
+                                                        ?>
                                             <table id="products" width="95%" border="0" align="center" cellpadding="0" cellspacing="0">
                                                 <thead>
                                                     <tr>
                                                         <td colspan="2" class="style26">
-                                                            <span class="style6"><strong><a name="vegetables" id="vegetables"></a>LOCAL ORGANIC VEGETABLES &amp; FRUIT: <br></strong></span>
+                                                            <span class="style6"><strong><a name="vegetables" id="vegetables"></a><?=$row['Category']?> <br></strong></span>
                                                         </td>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    <?php
-                                                    while ($row = mysqli_fetch_assoc($result)) {
-                                                       if ($row['Name']!=""):
-                                                        ?>
+                                                <?php endif;
+                                                if($row['Name']!=""): ?>
                                                         <tr>
                                                             <td>
                                                                 <?=$row['Name']?>
@@ -185,13 +187,15 @@ $result = mysqli_query($con, $strSQL); ?>
                                                             </td>
                                                             <td align="center"><span id="amount" class="amount">0</span></td>
                                                         </tr>
-                                                        <?php
-                                                            endif;
-                                                           }
-                                                        ?>
-                                                       
+                                                    <?php endif;
+                                                    if ($new != $old):?>  
                                                 </tbody>
                                             </table>
+                                             <?php
+                                             endif;
+                                                    $old =$row['Category']       
+                                                           }
+                                                        ?>
                                             <p>&nbsp;</p>
                                             <blockquote>
                                                 <p class="style27">Comments</p>
