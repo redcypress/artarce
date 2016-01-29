@@ -46,7 +46,7 @@ if ($uploadOk == 0) {
         echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
    
         $droprawtable = "drop table if exists products;";
-        $mysqli->query($con,$droprawtable);
+        $mysqli->query($droprawtable);
         $createrawtable =
         "CREATE TABLE  products` (
             `Id` INT( 11 ) NOT NULL AUTO_INCREMENT ,
