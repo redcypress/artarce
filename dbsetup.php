@@ -67,6 +67,8 @@ $password = "Bayou!5246";
 $dbname = "artacre";
 $usertable = "products";
 $yourfield = "name";
+$mysqli = new mysqli($hostname, $username, $password, $dbname);
+
 
 $con = mysqli_connect($hostname, $username, $password, $dbname) or die ("<html><script language='JavaScript'>
 alert('Unable to connect to database! Please try again later.'))</script></html>");
