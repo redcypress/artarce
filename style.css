@@ -72,7 +72,7 @@ a:link {
 .style34 {font-size: small}
 .style35 {color: #FF0000}
 
-.total1 {
+.total {
     position: fixed;
     display: block;
     left: 0;
@@ -82,7 +82,7 @@ a:link {
     top: 50%;
 }
 
-.total1.bottom {
+.total.bottom {
     position: relative;
     display: block;
     background: yellow;
