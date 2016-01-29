@@ -164,9 +164,17 @@ $result = mysqli_query($con, $strSQL); ?>
                                 </tbody>
                             </table>
                             <?php
+
                                 $old = "";
                                 while ($row = mysqli_fetch_assoc($result)) {
+                                
                                 $new = $row['Category'];
+                                if(!$row[0]) {
+                                     if ($new != $old):?>
+                                    </tbody>
+                                    </table>
+                                    <?php
+                                endif; }
                                 if ($new != $old):
                                     ?>
                                     <table id="products" width="95%" border="0" align="center" cellpadding="0" cellspacing="0">
@@ -179,10 +187,10 @@ $result = mysqli_query($con, $strSQL); ?>
                                         </td>
                                     </tr>
                                     </thead>
-                                    <tbody><tr>
+                                    <tbody>
                                 <?php endif;
                                 if ($row['Name'] != ""): ?>
-                                    
+                                    <tr>
                                         <td>
                                             <?=$row['Name'] ?>
                                         </td>
@@ -200,13 +208,9 @@ $result = mysqli_query($con, $strSQL); ?>
                                             <input type="text" value="2.0" class="price">
                                         </td>
                                         <td align="center"><span id="amount" class="amount">0</span></td>
-                                    
+                                    </tr>
                                 <?php endif;
-                                if ($new != $old):?>
-                                    </tr></tbody>
-                                    </table>
-                                    <?php
-                                endif;
+                               
                                 $old = $row['Category'];
                             }
                             ?>
