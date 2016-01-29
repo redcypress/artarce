@@ -75,7 +75,7 @@ alert('Unable to connect to database! Please try again later.'))</script></html>
 
 
 /* return name of current default database */
-$strSQL = "Select COUNT(0) AS count, * From products";
+$strSQL = "Select COUNT(0) count, * From products";
 $result = mysqli_query($con, $strSQL);
 ?>
 
