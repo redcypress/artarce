@@ -201,10 +201,10 @@ $result = mysqli_query($con, $strSQL); ?>
                                                                                                     id="vegetables"></a>LOCAL
                                                 ORGANIC VEGETABLES &amp; FRUIT: <br>
                                             </strong></span></td>
-                                </tr>
+                                </tr
                                 <?php
-                                while ($row = mysqli_fetch_assoc($result)) {
-                                    if ($row['Name']!=""):
+                               // while ($row = mysqli_fetch_assoc($result)) {
+                                 //   if ($row['Name']!=""):
                                     ?>
                                     <tr>
                                         <td><?=$row['Name']?></td>
@@ -220,8 +220,8 @@ $result = mysqli_query($con, $strSQL); ?>
                                         <td align="center"><span id="amount" class="amount">0</span></td>
                                     </tr>
                                     <?php
-                                    endif;
-                                }
+                                    //endif;
+                            //    }
                                 ?>
                                         <p><span id="total" class="total1">TOTAL</span></p>
 
