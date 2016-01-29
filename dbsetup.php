@@ -31,7 +31,6 @@
                 } else {
                     $(total).removeClass("bottom");
                 }
-            });
         });
 
         function update_amounts() {
