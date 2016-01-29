@@ -179,10 +179,10 @@ $result = mysqli_query($con, $strSQL); ?>
                                         </td>
                                     </tr>
                                     </thead>
-                                    <tbody>
+                                    <tbody><tr>
                                 <?php endif;
                                 if ($row['Name'] != ""): ?>
-                                    <tr>
+                                    
                                         <td>
                                             <?=$row['Name'] ?>
                                         </td>
@@ -200,10 +200,10 @@ $result = mysqli_query($con, $strSQL); ?>
                                             <input type="text" value="2.0" class="price">
                                         </td>
                                         <td align="center"><span id="amount" class="amount">0</span></td>
-                                    </tr>
+                                    
                                 <?php endif;
                                 if ($new != $old):?>
-                                    </tbody>
+                                    </tr></tbody>
                                     </table>
                                     <?php
                                 endif;
