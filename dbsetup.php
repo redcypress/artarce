@@ -64,9 +64,6 @@ $dbname = "artacre";
 $usertable = "products";
 $yourfield = "name";
 
-
-$mysqli = new mysqli($hostname, $username, $password, $dbname);
-
 $con = mysqli_connect($hostname, $username, $password, $dbname) or die ("<html><script language='JavaScript'>
 alert('Unable to connect to database! Please try again later.'))</script></html>");
 
@@ -152,15 +149,13 @@ $result = mysqli_query($con, $strSQL); ?>
                                                 </tbody>
                                             </table>
                                             <table id="products" width="95%" border="0" align="center" cellpadding="0" cellspacing="0">
-                                             <thead>
-
-                                                <tr>
-                                                    <td colspan="2" class="style26">
-                                                        <span class="style6"><strong><a name="vegetables"
-                                            id="vegetables"></a>LOCAL
-                                                ORGANIC VEGETABLES &amp; FRUIT: <br>
-                                            </strong></span></td>
-                                                </tr></thead>
+                                                <thead>
+                                                    <tr>
+                                                        <td colspan="2" class="style26">
+                                                            <span class="style6"><strong><a name="vegetables" id="vegetables"></a>LOCAL ORGANIC VEGETABLES &amp; FRUIT: <br></strong></span>
+                                                        </td>
+                                                    </tr>
+                                                </thead>
                                                 <tbody>
                                                     <?php
                                                     while ($row = mysqli_fetch_assoc($result)) {
@@ -189,8 +184,7 @@ $result = mysqli_query($con, $strSQL); ?>
                                                             endif;
                                                            }
                                                         ?>
-                                                        <tfoot>
-                                                            <tr><Td><span id="total" class="total1">TOTAL</span></TD></TR></tfoot>
+                                                       
                                                 </tbody>
                                             </table>
                                             <p>&nbsp;</p>
@@ -209,6 +203,9 @@ $result = mysqli_query($con, $strSQL); ?>
                                                 <input name="Pick up Details" type="radio" id="Jan23order4" value="Home Delivery to Florenceville area"> Special Delivery to Florenceville, Bristol, Glassville, Knowlesville, Mount Pleasant, Bath areas
                                                 <br>
                                                 <input name="Pick up Details" type="radio" id="Jan23order5" value="Home Delivery for Hartland-Woodstock area"> Special Delivery to Coldstream, Hartland, Woodstock areas </p>
+                                                
+                                            <span id="total" class="total1">TOTAL</span>    
+                                                
                                             <p align="center">
                                                 <input type="image" src="images/submit.png" width="149" height="56" value="Send Order">
                                             </p>
