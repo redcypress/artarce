@@ -211,7 +211,8 @@ $result = mysqli_query($con, $strSQL);
                                     </tr>
                                 <?php endif;
                                
-                                $old = $row['Category'];if ($row[12]):?>
+                                $old = $row['Category'];
+                                if ($row[12]):?>asdfadf
                                     </tbody>
                                     </table>
                                     <?php
