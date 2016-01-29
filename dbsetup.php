@@ -47,7 +47,7 @@
                 });
 
 
-                $('.total').text('Total:' + sum);
+                $('.total').text('Total: ' + sum);
 
                 //just update the total to sum
             }
