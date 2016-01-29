@@ -25,7 +25,7 @@
             });
             var total = $('#total');
             $(document).scroll(function () {
-                var scroll = $('#commments').scrollTop();
+                var scroll = $('#commments').top();
                 if (scroll >= 50) {
                     $(total).addClass("bottom");
                 } else {
