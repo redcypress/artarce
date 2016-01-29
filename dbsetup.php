@@ -26,7 +26,7 @@
         var total = $('#total');
         $(document).scroll(function () {
                 var scroll = $(window).scrollTop();
-                if (scroll >= 500) {
+                if (scroll >= 50) {
                     $(total).addClass("bottom");
                 } else {
                     $(total).removeClass("bottom");
