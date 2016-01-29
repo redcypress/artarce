@@ -44,10 +44,10 @@ if ($uploadOk == 0) {
     } else {
         echo "Sorry, there was an error uploading your file.";
     }
-}
 
-  $droprawtable = "drop table if exists products;";
-    $mysqli->query($droprawtable);
+
+    $droprawtable = "drop table if exists products;";
+    mysqli_query($con,$droprawtable);
     $createrawtable =
     "CREATE TABLE  products` (
         `Id` INT( 11 ) NOT NULL AUTO_INCREMENT ,
@@ -58,10 +58,10 @@ if ($uploadOk == 0) {
         PRIMARY KEY (  `Id` )
         ) ENGINE = MYISAM DEFAULT CHARSET = latin1;
     ); ";
-     mysqli_query($con, $createrawtable)
+    mysqli_query($con, $createrawtable);
 
-
- if ($downloadedcsvfile){
+    $downloadedcsvfile = fopen($target_file,"r");
+    if ($downloadedcsvfile){
                 $skipfirstline = true;
                 //echo "[" .getmypid() . "] [" . date('m/d/Y H:i:s') . "] Started CSV Import \n";
                 while (($data = fgetcsv($downloadedcsvfile, 50000, "," )) !== FALSE ){    //echo "<pre>"; print_r($data);die;
@@ -76,6 +76,6 @@ if ($uploadOk == 0) {
                     $mysqli->query($import);
 
                 }
+    }
 }
-
 ?>
