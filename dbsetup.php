@@ -215,7 +215,7 @@ $result = mysqli_query($con, $strSQL); ?>
                                                 <option value="5">5</option>
                                                 <option value="6">6</option>
                                             </select></td>
-                                        <td><input type="text" value="2" class="price"></td>
+                                        <td><input type="text" value="2.0" class="price"></td>
                                         <td align="center"><span id="amount" class="amount">0</span></td>
                                     </tr>
                                     <?php
