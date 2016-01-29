@@ -168,9 +168,8 @@ $result = mysqli_query($con, $strSQL);
                                 $old = "";
                                 while ($row = mysqli_fetch_assoc($result)) {
                                 $rowcount =  mysqli_num_rows($result) -1;
-                                echo $rowcount;
                                 $new = $row['Category'];
-                                if(!$row[0] || $rowcount) {
+                                if(!$row[0] || $row[$rowcount]) {
                                      if ($new != $old):?>
                                     </tbody>
                                     </table>
