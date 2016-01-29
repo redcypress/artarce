@@ -193,7 +193,7 @@ $result = mysqli_query($con, $strSQL); ?>
                                             </table>
                                              <?php
                                              endif;
-                                                    $old =$row['Category']       
+                                                    $old =$row['Category'];       
                                                            }
                                                         ?>
                                             <p>&nbsp;</p>
