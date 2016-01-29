@@ -75,7 +75,7 @@ alert('Unable to connect to database! Please try again later.'))</script></html>
 
 
 /* return name of current default database */
-$strSQL = "Select COUNT(0) count, * From products";
+$strSQL = "Select  * From products";
 $result = mysqli_query($con, $strSQL);
 ?>
 
@@ -167,7 +167,7 @@ $result = mysqli_query($con, $strSQL);
                             <?php
                                 $old = "";
                                 while ($row = mysqli_fetch_assoc($result)) {
-                                $rowcount = $row['count'] -1;
+                                $rowcount =  mysqli_num_rows($result);
                                 $new = $row['Category'];
                                 if(!$row[0] || $rowcount) {
                                      if ($new != $old):?>
