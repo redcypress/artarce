@@ -27,7 +27,7 @@
             var commments = $('#commments').offset();
             $(document).scroll(function () {
                 var scroll = $(window).scrollTop();
-                if (scroll >= commments) {
+                if (scroll >= 800) {
                     $(total).addClass("bottom");
                 } else {
                     $(total).removeClass("bottom");
