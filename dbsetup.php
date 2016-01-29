@@ -75,8 +75,9 @@ alert('Unable to connect to database! Please try again later.'))</script></html>
 
 
 /* return name of current default database */
-$strSQL = "Select * From products";
-$result = mysqli_query($con, $strSQL); ?>
+$strSQL = "Select SQL_CALC_FOUND_ROWS * From products";
+$result = mysqli_query($con, $strSQL);
+$rowcount = mysqli_query($con,"SELECT FOUND_ROWS();") - 1;?>
 
 <table width="800" border="0" align="center" cellpadding="0" cellspacing="0" id="producttable">
     <tbody>
@@ -169,7 +170,7 @@ $result = mysqli_query($con, $strSQL); ?>
                                 while ($row = mysqli_fetch_assoc($result)) {
                                 
                                 $new = $row['Category'];
-                                if(!$row[0]) {
+                                if(!$row[0] || $rowcount) {
                                      if ($new != $old):?>
                                     </tbody>
                                     </table>
