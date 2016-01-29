@@ -44,27 +44,23 @@ if ($uploadOk == 0) {
 } else {
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
         echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
-    } else {
-        echo "Sorry, there was an error uploading your file.";
-    }
-
-
-    $droprawtable = "drop table if exists products;";
-    mysqli_query($con,$droprawtable);
-    $createrawtable =
-    "CREATE TABLE  products` (
-        `Id` INT( 11 ) NOT NULL AUTO_INCREMENT ,
-         `Category` VARCHAR( 55 ) NOT NULL ,
-         `Name` VARCHAR( 45 ) NOT NULL ,
-         `Description` VARCHAR( 150 ) NOT NULL ,
-         `Price` VARCHAR( 45 ) NOT NULL ,
-        PRIMARY KEY (  `Id` )
-        ) ENGINE = MYISAM DEFAULT CHARSET = latin1;
-    ); ";
-    mysqli_query($con, $createrawtable);
-
-    $downloadedcsvfile = fopen($target_file,"r");
-    if ($downloadedcsvfile){
+   
+        $droprawtable = "drop table if exists products;";
+        $mysqli->query($con,$droprawtable);
+        $createrawtable =
+        "CREATE TABLE  products` (
+            `Id` INT( 11 ) NOT NULL AUTO_INCREMENT ,
+             `Category` VARCHAR( 55 ) NOT NULL ,
+             `Name` VARCHAR( 45 ) NOT NULL ,
+             `Description` VARCHAR( 150 ) NOT NULL ,
+             `Price` VARCHAR( 45 ) NOT NULL ,
+            PRIMARY KEY (  `Id` )
+            ) ENGINE = MYISAM DEFAULT CHARSET = latin1;
+        ); ";
+        $mysqli->query($con, $createrawtable);
+    
+        $downloadedcsvfile = fopen($target_file,"r");
+            if ($downloadedcsvfile){
                 $skipfirstline = true;
                 //echo "[" .getmypid() . "] [" . date('m/d/Y H:i:s') . "] Started CSV Import \n";
                 while (($data = fgetcsv($downloadedcsvfile, 50000, "," )) !== FALSE ){    //echo "<pre>"; print_r($data);die;
@@ -79,6 +75,9 @@ if ($uploadOk == 0) {
                     $mysqli->query($import);
 
                 }
+        }
+    } else {
+        echo "Sorry, there was an error uploading your file.";
     }
 }
 ?>
