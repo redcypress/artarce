@@ -179,7 +179,7 @@ $result = mysqli_query($con, $strSQL);
                                     <table id="products" width="95%" border="0" align="center" cellpadding="0" cellspacing="0">
                                     <thead>
                                     <tr>
-                                        <td colspan="2" class="style26">
+                                        <td colspan="4" class="style26">
                                             <span class="style6"><strong><a name="vegetables"
                                                                             id="vegetables"></a><?= $row['Category'] ?>
                                                     <br></strong></span>
@@ -191,7 +191,10 @@ $result = mysqli_query($con, $strSQL);
                                 if ($row['Name'] != ""): ?>
                                     <tr>
                                         <td>
-                                            <?=$row['Name'] ?> Price -<span value="2.0" class="price"><?=$row['Price'] ?></span>
+                                            <?=$row['Name'] ?> 
+                                          </td>
+                                           <td>
+                                            Price <span value="2.0" class="price"><?=$row['Price'] ?></span>
                                         </td>
                                         <td>
                                             <select value="" class="qty" name="qty">
