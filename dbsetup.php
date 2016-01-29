@@ -189,7 +189,8 @@ $result = mysqli_query($con, $strSQL); ?>
                                                             endif;
                                                            }
                                                         ?>
-                                                            <p><span id="total" class="total1">TOTAL</span></p>
+                                                        <tfoot>
+                                                            <tr><Td><span id="total" class="total1">TOTAL</span></TD></TR></tfoot>
                                                 </tbody>
                                             </table>
                                             <p>&nbsp;</p>
