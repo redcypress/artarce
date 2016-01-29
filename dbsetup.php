@@ -152,13 +152,13 @@ $result = mysqli_query($con, $strSQL); ?>
                                                 </tbody>
                                             </table>
                                             <table id="products" width="95%" border="0" align="center" cellpadding="0" cellspacing="0">
-                                                <tr>
-                                                    <td colspan="2" class="style26">
+                                             <th>
+    <td colspan="2" class="style26">
                                                         <span class="style6"><strong><a name="vegetables"
                                             id="vegetables"></a>LOCAL
                                                 ORGANIC VEGETABLES &amp; FRUIT: <br>
                                             </strong></span></td>
-                                                </tr>
+                                                </th>
                                                 <tbody>
                                                     <?php
                                                     while ($row = mysqli_fetch_assoc($result)) {
