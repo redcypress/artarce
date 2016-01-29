@@ -152,18 +152,12 @@ $result = mysqli_query($con, $strSQL); ?>
                                                 </tbody>
                                             </table>
                                             <table id="products" width="95%" border="0" align="center" cellpadding="0" cellspacing="0">
-                                                <tr>
-                                                    <td colspan="2" class="style26">
-                                                        <span class="style6"><strong><a name="vegetables"
-                                            id="vegetables"></a>LOCAL
-                                                ORGANIC VEGETABLES &amp; FRUIT: <br>
-                                            </strong></span></td>
-                                                </tr>
+                                              
                                                 <tbody>
                                                     <?php
-                                while ($row = mysqli_fetch_assoc($result)) {
-                                   if ($row['Name']!=""):
-                                    ?>
+                                                    while ($row = mysqli_fetch_assoc($result)) {
+                                                       if ($row['Name']!=""):
+                                                        ?>
                                                         <tr>
                                                             <td>
                                                                 <?=$row['Name']?>
@@ -184,9 +178,9 @@ $result = mysqli_query($con, $strSQL); ?>
                                                             <td align="center"><span id="amount" class="amount">0</span></td>
                                                         </tr>
                                                         <?php
-                                    endif;
-                                   }
-                                ?>
+                                                            endif;
+                                                           }
+                                                        ?>
                                                             <p><span id="total" class="total1">TOTAL</span></p>
                                                 </tbody>
                                             </table>
