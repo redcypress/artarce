@@ -75,7 +75,7 @@ alert('Unable to connect to database! Please try again later.'))</script></html>
 
 
 /* return name of current default database */
-$strSQL = "Select * From Products";
+$strSQL = "Select * From products";
 $result = mysqli_query($con, $strSQL); ?>
 
 <table width="800" border="0" align="center" cellpadding="0" cellspacing="0" id="producttable">
@@ -182,7 +182,7 @@ $result = mysqli_query($con, $strSQL); ?>
                                 if ($row['Name'] != ""): ?>
                                     <tr>
                                         <td>
-                                            <?= $row['Name'] ?>
+                                            <?=$row['Name'] ?>
                                         </td>
                                         <td>
                                             <select value="" class="qty" name="qty">
