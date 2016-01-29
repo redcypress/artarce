@@ -40,7 +40,7 @@
 
                 $('#products  tbody > tr').each(function () {
                     var qty = $(this).find('option:selected').val();
-                    var price = $(this).find('.price').innerHTML();
+                    var price = $(this).find('.price').text();
                     var amount = (qty * price)
                     sum += amount;
                     $(this).find('.amount').text('' + amount);
