@@ -25,7 +25,13 @@
         });
         var total = $('#total');
         $(document).scroll(function () {
-            total.addClass($(this).scrollTop() > 100 ? "" : "top");
+                var scroll = $(window).scrollTop();
+                if (scroll >= 500) {
+                    $(total).addClass("bottom");
+                } else {
+                    $(total).removeClass("bottom");
+                }
+            });
         });
 
         function update_amounts() {
