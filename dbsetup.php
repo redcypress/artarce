@@ -168,32 +168,19 @@ $result = mysqli_query($con, $strSQL); ?>
                                 </tbody>
                             </table>
                             
-<table id="myTable1">
-    <thead>
-        <tr><th>Product name</th><th>Qty</th><th>Price</th>
-    <th align="center"><span id="amount" class="amount">Amount</span> </th></tr>
-    </thead>
-    <tfoot>
-        <tr><td colspan="2"></td><td align="right"><span id="total" class="total">TOTAL</span> </td></tr>
-    </tfoot>
-    <tbody>
-    
-    <tr><td>Product 1</td><td><select value="" class="qty1" name="qty1">
-        <option value="1">1</option>
-        <option value="2">2</option>
-</select></td><td><input type="text" value="11.60" class="price1"></td>
-<td align="center"><span id="amount" class="amount">0</span> </td></tr>
-    <tr><td>Product 2</td><td><select value="" class="qty1" name="qty1">
-<option value="1">1</option>
-<option value="2">2</option>
-</select></td><td><input type="text" value="15.26" class="price1"></td>
-<td align="center"><span id="amount" class="amount">0</span> eur</td></tr>
-        
-</tbody></table>
 
                             <table id="products" width="95%" border="0" align="center" cellpadding="0" cellspacing="0">
-                                <tbody>
-                                
+                               
+                                <tr>
+                                    <td colspan="2" class="style26">
+                                        
+
+                                        <span class="style6"><strong><a name="vegetables"
+                                                                                                    id="vegetables"></a>LOCAL
+                                                ORGANIC VEGETABLES &amp; FRUIT: <br>
+                                            </strong></span></td>
+                                </tr>
+                                 <tbody>
                                 <?php
                                // while ($row = mysqli_fetch_assoc($result)) {
                                  //   if ($row['Name']!=""):
