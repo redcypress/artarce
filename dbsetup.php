@@ -163,7 +163,9 @@ $result = mysqli_query($con, $strSQL); ?>
                                 </tr>
                                 </tbody>
                             </table>
-                            <?php while ($row = mysqli_fetch_assoc($result)) {
+                            <?php
+                                $old = "";
+                                while ($row = mysqli_fetch_assoc($result)) {
                                 $new = $row['Category'];
                                 if ($new != $old):
                                     ?>
