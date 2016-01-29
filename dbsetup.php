@@ -36,20 +36,18 @@
 
             function update_amounts() {
                 var sum = 0.0;
-                var sum1 = 0.0;
 
 
                 $('#products  tbody > tr').each(function () {
                     var qty = $(this).find('option:selected').val();
                     var price = $(this).find('.price').val();
                     var amount = (qty * price)
-                    sum1 += amount;
+                    sum += amount;
                     $(this).find('.amount').text('' + amount);
                 });
 
 
-                $('.total').text('' + sum);
-                $('.total1').text(sum1);
+                $('.total').text('Total:' + sum);
 
                 //just update the total to sum
             }
@@ -214,7 +212,7 @@ $result = mysqli_query($con, $strSQL);
                                 <?php endif;
                                
                                 
-                                if ($i == $rowcount):?>asdfadf
+                                if ($i == $rowcount):?>
                                     </tbody>
                                     </table>
                                     <?php
@@ -252,7 +250,7 @@ $result = mysqli_query($con, $strSQL);
                                        value="Home Delivery for Hartland-Woodstock area"> Special Delivery to
                                 Coldstream, Hartland, Woodstock areas </p>
 
-                            <span id="total" class="total1">TOTAL</span>
+                            <span id="total" class="total">TOTAL</span>
 
                             <p align="center">
                                 <input type="image" src="images/submit.png" width="149" height="56" value="Send Order">
