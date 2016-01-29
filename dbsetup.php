@@ -212,7 +212,7 @@ $result = mysqli_query($con, $strSQL);
                                 <?php endif;
                                
                                 $old = $row['Category'];
-                                if ($row[12]):?>asdfadf
+                                if ($row[11]):?>asdfadf
                                     </tbody>
                                     </table>
                                     <?php
