@@ -71,3 +71,13 @@ a:link {
 .style33 {border-bottom-width: 1px; border-bottom-style: dashed; border-bottom-color: #999999; border-right-width: 1px; border-right-style: dashed; border-right-color: #999999; padding-left: 10px; font-weight: bold; }
 .style34 {font-size: small}
 .style35 {color: #FF0000}
+
+.total1 {
+    position: fixed;
+    display: block;
+    left: 0;
+    background: yellow;
+    width: 50px;
+    height: 40px;
+    top: 50%;
+}

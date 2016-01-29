@@ -23,10 +23,10 @@
 
             });
         });
-        // var $logo = $('#logo-scroll');
-        //$(document).scroll(function () {
-        //  $logo.css({display: $(this).scrollTop() > 100 ? "block" : "none"});
-        //});
+        var total = $('#total');
+        $(document).scroll(function () {
+            total.addClass($(this).scrollTop() > 100 ? "" : "top");
+        });
 
         function update_amounts() {
             var sum = 0.0;
