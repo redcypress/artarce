@@ -43,11 +43,11 @@
                     var price = $(this).find('.price').text();
                     var amount = (qty * price)
                     sum += amount;
-                    $(this).find('.amount').text('' + amount);
+                    $(this).find('.amount').text('$' + amount);
                 });
 
 
-                $('.total').text('Total: ' + sum);
+                $('.total').text('Total: $' + sum);
 
                 //just update the total to sum
             }
