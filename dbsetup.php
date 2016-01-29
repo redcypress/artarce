@@ -21,7 +21,6 @@
                 });
                 $('.qty').change(function () {
                     update_amounts();
-                    $('.total1').text(sum1);
 
                 });
             });
@@ -52,6 +51,8 @@
                 
 
                 $('.total').text('' + sum);
+                $('.total1').text(sum);
+
                 //just update the total to sum
             }
             
