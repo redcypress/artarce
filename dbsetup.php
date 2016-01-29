@@ -166,10 +166,11 @@ $result = mysqli_query($con, $strSQL);
                             </table>
                             <?php
                                 $old = "";
+                                $i = 0;
                                 while ($row = mysqli_fetch_assoc($result)) {
                                 $rowcount =  mysqli_num_rows($result) -1;
                                 $new = $row['Category'];
-                                if(!$row[0] ) {
+                                if($i != 0) {
                                      if ($new != $old):?>
                                     </tbody>
                                     </table>
@@ -211,12 +212,14 @@ $result = mysqli_query($con, $strSQL);
                                     </tr>
                                 <?php endif;
                                
-                                $old = $row['Category'];
-                                if ($row[11]):?>asdfadf
+                                
+                                if ($i == $rowcount):?>asdfadf
                                     </tbody>
                                     </table>
                                     <?php
                             endif;
+                            $old = $row['Category'];
+                            $i++;
                             }
                              
                             ?>
