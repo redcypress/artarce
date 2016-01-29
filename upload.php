@@ -48,15 +48,14 @@ if ($uploadOk == 0) {
         $droprawtable = "drop table if exists products;";
         $mysqli->query($droprawtable);
         $createrawtable =
-        "CREATE TABLE  products` (
+        "CREATE TABLE  products (
             `Id` INT( 11 ) NOT NULL AUTO_INCREMENT ,
              `Category` VARCHAR( 55 ) NOT NULL ,
              `Name` VARCHAR( 45 ) NOT NULL ,
              `Description` VARCHAR( 150 ) NOT NULL ,
              `Price` VARCHAR( 45 ) NOT NULL ,
             PRIMARY KEY (  `Id` )
-            ) ENGINE = MYISAM DEFAULT CHARSET = latin1;
-        ); ";
+            ) ENGINE = MYISAM DEFAULT CHARSET = latin1; ";
         $mysqli->query($createrawtable);
     
         $downloadedcsvfile = fopen($target_file,"r");
