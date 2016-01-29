@@ -51,7 +51,7 @@
                 
 
                 $('.total').text('' + sum);
-                $('.total1').text(sum);
+                $('.total1').text(sum1);
 
                 //just update the total to sum
             }
