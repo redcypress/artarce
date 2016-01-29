@@ -170,7 +170,7 @@ $result = mysqli_query($con, $strSQL);
                                 $rowcount =  mysqli_num_rows($result) -1;
                                 $new = $row['Category'];
                                 if(!$row[0] ) {
-                                     if ($new != $old || $row[12]):?>
+                                     if ($new != $old):?>
                                     </tbody>
                                     </table>
                                     <?php
@@ -213,6 +213,11 @@ $result = mysqli_query($con, $strSQL);
                                
                                 $old = $row['Category'];
                             }
+                             if ($row[$rowcount]):?>
+                                    </tbody>
+                                    </table>
+                                    <?php
+                            endif;
                             ?>
                             <p>&nbsp;</p>
                             <blockquote>
