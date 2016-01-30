@@ -5,7 +5,7 @@
 <form action="upload.php" method="post" enctype="multipart/form-data">
     Select csv to upload:
     <input type="file" name="fileToUpload" id="fileToUpload">
-    <input type="submit" value="Upload Image" name="submit">
+    <input type="submit" value="Upload CSV" name="submit">
 </form>
 
 </body>
@@ -75,6 +75,8 @@ if ($uploadOk == 0) {
 
                 }
         }
+    echo "<Br>All products have been imported into the database.";
+
     } else {
         echo "Sorry, there was an error uploading your file.";
     }
