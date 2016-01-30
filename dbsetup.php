@@ -42,8 +42,13 @@
                     var qty = $(this).find('option:selected').val();
                     var price = $(this).find('.price').text();
                     var amount = (qty * price)
-                    if (amount == 0) {$(this).find('.price').hide(); $(this).find('.amount').hide();}
-                    sum += amount;
+                    if (amount == 0) {$(this).find('.amount').hide();}
+                    else 
+                    {
+                        $(this).find('.amount').show();
+                    }
+
+                            sum += amount;
                     $(this).find('.amount').text('' + amount);
                 });
 
