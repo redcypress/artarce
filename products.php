@@ -25,9 +25,10 @@
             });
             var total = $('#total');
             var commments = $('#commments').offset();
+            
             $(document).scroll(function () {
                 var scroll = $(window).scrollTop();
-                if (scroll >= 800) {
+                if (scroll >= commments.top - 400) {
                     $(total).addClass("bottom");
                 } else {
                     $(total).removeClass("bottom");
