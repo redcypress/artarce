@@ -50,7 +50,7 @@
                         $(this).find('.amount').show();
                     }
 
-                            sum += amount;
+                        sum += parseFloat(Math.round(amount * 100) / 100).toFixed(2);
                     $(this).find('.amount').text(' $' + amount);
                 });
 

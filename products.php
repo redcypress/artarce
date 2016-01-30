@@ -41,9 +41,17 @@
                 $('#products  tbody > tr').each(function () {
                     var qty = $(this).find('option:selected').val();
                     var price = $(this).find('.price').text();
-                    var amount = (qty * price)
-                    sum += amount;
-                    $(this).find('.amount').text('$' + amount);
+                    var amount = 
+                    parseFloat(Math.round((qty * price) * 100) / 100).toFixed(2);
+
+                    if (amount == 0) {$(this).find('.amount').hide();}
+                    else 
+                    {
+                        $(this).find('.amount').show();
+                    }
+
+                        sum += parseFloat(Math.round(amount * 100) / 100).toFixed(2);
+                    $(this).find('.amount').text(' $' + amount);
                 });
 
 
@@ -194,7 +202,7 @@ $result = mysqli_query($con, $strSQL);
                                             <?=$row['Name'] ?> 
                                           </td>
                                            <td>
-                                            Price <span value="2.0" class="price"><?=$row['Price'] ?></span>
+                                            Price $<span value="2.0" class="price"><?=$row['Price'] ?></span>
                                         </td>
                                         <td>
                                             <select value="" class="qty" name="qty">
@@ -207,7 +215,7 @@ $result = mysqli_query($con, $strSQL);
                                                 <option value="6">6</option>
                                             </select>
                                         </td>
-                                        <td align="center"><span id="amount" class="amount">0</span></td>
+                                        <td width="10" align="center"><span id="amount" class="amount">0</span></td>
                                     </tr>
                                 <?php endif;
                                
