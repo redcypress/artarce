@@ -41,7 +41,9 @@
                 $('#products  tbody > tr').each(function () {
                     var qty = $(this).find('option:selected').val();
                     var price = $(this).find('.price').text();
-                    var amount = (qty * price)
+                    var amount = 
+                    parseFloat(Math.round((qty * price) * 100) / 100).toFixed(2);
+
                     if (amount == 0) {$(this).find('.amount').hide();}
                     else 
                     {
