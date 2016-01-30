@@ -49,7 +49,7 @@
                     }
 
                             sum += amount;
-                    $(this).find('.amount').text('' + amount);
+                    $(this).find('.amount').text(' $' + amount);
                 });
 
 
@@ -213,7 +213,7 @@ $result = mysqli_query($con, $strSQL);
                                                 <option value="6">6</option>
                                             </select>
                                         </td>
-                                        <td align="center"><span id="amount" class="amount">0</span></td>
+                                        <td width="10" align="center"><span id="amount" class="amount">0</span></td>
                                     </tr>
                                 <?php endif;
                                
