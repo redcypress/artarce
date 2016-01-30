@@ -12,7 +12,7 @@
 </html>
 
 <?php
-if($_FILES !== "") {
+if(isset($_FILES)) {
 
 $hostname = "artacre.db.10635241.hostedresource.com";
 $username = "artacre";
