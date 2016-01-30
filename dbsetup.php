@@ -200,7 +200,7 @@ $result = mysqli_query($con, $strSQL);
                                             <?=$row['Name'] ?> 
                                           </td>
                                            <td>
-                                            Price <span value="2.0" class="price"><?=$row['Price'] ?></span>
+                                            Price <span value="2.0" class="price">$<?=$row['Price'] ?></span>
                                         </td>
                                         <td>
                                             <select value="" class="qty" name="qty">
