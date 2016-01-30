@@ -12,6 +12,8 @@
 </html>
 
 <?php
+if($_FILES["fileToUpload"]["name"] !==) {
+
 $hostname = "artacre.db.10635241.hostedresource.com";
 $username = "artacre";
 $password = "Bayou!5246";
@@ -34,7 +36,7 @@ $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
 
 // Allow certain file formats
 if($imageFileType != "csv" ) {
-    echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+    echo "Sorry, only csv files are allowed.";
     $uploadOk = 0;
 }
 // Check if $uploadOk is set to 0 by an error
@@ -80,5 +82,6 @@ if ($uploadOk == 0) {
     } else {
         echo "Sorry, there was an error uploading your file.";
     }
+}
 }
 ?>
