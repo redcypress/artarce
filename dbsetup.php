@@ -41,8 +41,8 @@
                 $('#products  tbody > tr').each(function () {
                     var qty = $(this).find('option:selected').val();
                     var price = $(this).find('.price').text();
-                    var amount = 
-                    parseFloat(Math.round((qty * price) * 100) / 100).toFixed(2);
+                    var amount = (qty * price)
+                    parseFloat(Math.round( * 100) / 100).toFixed(2);
 
                     if (amount == 0) {$(this).find('.amount').hide();}
                     else 
@@ -50,12 +50,12 @@
                         $(this).find('.amount').show();
                     }
 
-                        sum += parseFloat(Math.round(amount * 100) / 100).toFixed(2);
-                    $(this).find('.amount').text(' $' + amount);
+                        sum += amount;
+                    $(this).find('.amount').text(' $' + parseFloat(Math.round(amount * 100) / 100).toFixed(2));
                 });
 
 
-                $('.total').text('Total: $' + sum);
+                $('.total').text('Total: $' + parseFloat(Math.round(sum * 100) / 100).toFixed(2));
 
                 //just update the total to sum
             }
