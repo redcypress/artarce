@@ -28,7 +28,7 @@
             
             $(document).scroll(function () {
                 var scroll = $(window).scrollTop();
-                if (scroll >= commments.top) {
+                if (scroll >= commments.top - 400) {
                     $(total).addClass("bottom");
                 } else {
                     $(total).removeClass("bottom");
