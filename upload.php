@@ -66,6 +66,8 @@ if ($uploadOk == 0) {
                 //echo "[" .getmypid() . "] [" . date('m/d/Y H:i:s') . "] Started CSV Import \n";
                 while (($data = fgetcsv($downloadedcsvfile, 50000, "," )) !== FALSE ){    //echo "<pre>"; print_r($data);die;
                     if($skipfirstline) { $skipfirstline = false; continue; }
+                    if ($mysqli->real_escape_string($data[0]))
+                    {
                      $import="INSERT INTO products (Category , Name , Description , Price)
                             values(
                             '".$mysqli->real_escape_string($data[0])."',
@@ -73,8 +75,9 @@ if ($uploadOk == 0) {
                             '".$mysqli->real_escape_string($data[2])."',
                             '".$mysqli->real_escape_string($data[3])."'
                            ); ";
+                    
                     $mysqli->query($import);
-
+                    }
                 }
         }
     echo "<Br>All products have been imported into the database.";
