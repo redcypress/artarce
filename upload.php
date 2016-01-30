@@ -12,7 +12,7 @@
 </html>
 
 <?php
-if($_FILES["fileToUpload"]["name"] !==) {
+if($_FILES["fileToUpload"]["name"] !== "") {
 
 $hostname = "artacre.db.10635241.hostedresource.com";
 $username = "artacre";
