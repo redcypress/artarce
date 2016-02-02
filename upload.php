@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <html>
+<head><script src='https://www.google.com/recaptcha/api.js'></script>
+</head>
 <body>
 
 <form action="upload.php" method="post" enctype="multipart/form-data">
     Select csv to upload:
     <input type="file" name="fileToUpload" id="fileToUpload">
-    <input type="submit" value="Upload CSV" name="submit">
+    <div class="g-recaptcha" data-sitekey="6LdzKBcTAAAAAO06I2xRlIGGpco-D-od9GH7OkSO"></div>
+
+<input type="submit" value="Upload CSV" name="submit">
+    
 </form>
 
 </body>
