@@ -262,7 +262,7 @@ $result = mysqli_query($con, $strSQL);
                                 Coldstream, Hartland, Woodstock areas </p>
 
                             <span id="total" class="total">TOTAL</span>
-                            <input name="ordertotal" type="hidden"id="ordertotal">
+                            <input value="" name="ordertotal" type=""id="ordertotal">
                             <p align="center"><input name="Email" type="text" class="required" id="Email">
                                 <input type="image" src="images/submit.png" width="149" height="56" value="Send Order">
                             </p>
