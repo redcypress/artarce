@@ -207,7 +207,7 @@ $result = mysqli_query($con, $strSQL);
                                             Price $<span value="2.0" class="price"><?=$row['Price'] ?></span>
                                         </td>
                                         <td>
-                                            <select value="" class="qty" name="qty">
+                                            <select value="" class="qty" name="<?=$row['Name'] ?>" id="<?=$row['Name'] ?>">
                                                 <option value="0">0</option>
                                                 <option value="1">1</option>
                                                 <option value="2">2</option>
@@ -262,7 +262,7 @@ $result = mysqli_query($con, $strSQL);
 
                             <span id="total" class="total">TOTAL</span>
                             <input value="" name="ordertotal" type=""id="ordertotal">
-                            <p align="center"><input name="Email" type="text" class="required" id="Email">
+                            <p align="center">
                                 <input type="image" src="images/submit.png" width="149" height="56" value="Send Order">
                             </p>
                         </form>

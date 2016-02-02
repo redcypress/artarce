@@ -42,7 +42,7 @@ a:link {
 
 
 // Who should this message be sent to?
-$to = "redcypress@yahoo.com";
+$to = "lisa@builtbyredcypress.com";
 // EXAMPLES
 // $to = "a.n.example@shef.ac.uk"; // one recipient
 // $to = "a.n.example@shef.ac.uk, person.two@shef.ac.uk"; // two recipients
