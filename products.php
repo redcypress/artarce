@@ -57,8 +57,7 @@
 
                 $('.total').text('Total: $' + parseFloat(Math.round(sum * 100) / 100).toFixed(2));
 
-                $('ordertotal').val
-('Total: $' + parseFloat(Math.round(sum * 100) / 100).toFixed(2));
+                $('#ordertotal').val(parseFloat(Math.round(sum * 100) / 100).toFixed(2));
 
                 //just update the total to sum
             }
