@@ -57,6 +57,9 @@
 
                 $('.total').text('Total: $' + parseFloat(Math.round(sum * 100) / 100).toFixed(2));
 
+                $('ordertotal').val
+('Total: $' + parseFloat(Math.round(sum * 100) / 100).toFixed(2));
+
                 //just update the total to sum
             }
 
@@ -259,8 +262,8 @@ $result = mysqli_query($con, $strSQL);
                                 Coldstream, Hartland, Woodstock areas </p>
 
                             <span id="total" class="total">TOTAL</span>
-
-                            <p align="center">
+<input name="ordertotal" type="hidden"id="ordertotal">
+                            <<input name="Email" type="text" class="required" id="Email">p align="center">
                                 <input type="image" src="images/submit.png" width="149" height="56" value="Send Order">
                             </p>
                         </form>
